@@ -27,8 +27,10 @@
 	--menhera-theme-frame-background-color: #fff;
 	--menhera-theme-frame-text-color: #666;
 	--menhera-theme-menubar-background-color: #d24800;
+	--menhera-theme-menubar-border-color: #6e2200;
 	--menhera-theme-menubar-text-color: #fff;
 	--menhera-theme-drawer-background-color: #750055;
+	--menhera-theme-drawer-border-color: #450031;
 	--menhera-theme-drawer-text-color: #fff;
 }
 
