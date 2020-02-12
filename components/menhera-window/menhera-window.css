@@ -60,8 +60,8 @@
 	background-color: var(--menhera-theme-drawer-background-color);
 	color: var(--menhera-theme-drawer-text-color);
 	overflow: hidden;
-	--menhera-drawer-inline-padding: calc(2em);
-	--menhera-drawer-block-padding: calc(1em);
+	--menhera-drawer-inline-padding: 2rem;
+	--menhera-drawer-block-padding: 1rem;
 }
 
 #menubar {
