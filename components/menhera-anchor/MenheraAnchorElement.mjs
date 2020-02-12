@@ -59,7 +59,7 @@ export class MenheraAnchorElement extends HTMLElement
 				return;
 			}
 			
-			shadow.click ();
+			shadow.click && shadow.click ();
 		});
 		
 		import ('/_menhera/modules/menhera.mjs').then (({menhera}) => {

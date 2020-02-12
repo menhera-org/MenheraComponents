@@ -188,6 +188,50 @@ export class MenheraWindowElement extends HTMLElement
 		
 	}
 	
+	hasActivity (aElement)
+	{
+		return [... this.children].includes (aElement);
+	}
+	
+	setActivity (aElement)
+	{
+		if (!(aElement instanceof HTMLElement)) {
+			throw new TypeError ('Not an HTMLElement');
+		}
+		if (!this.hasActivity (aElement)) {
+			this.append (aElement);
+		}
+		
+		[... this.children]
+			.filter (element => element.slot == 'visible-activity')
+			.forEach (element => void (element.slot = ''));
+		
+		aElement.slot = 'visible-activity';
+	}
+	
+	removeActivity (aElement)
+	{
+		if (!this.hasActivity (aElement)) {
+			return false;
+		}
+		
+		aElement.remove ();
+		return true;
+	}
+	
+	cleanupActivities ()
+	{
+		[... this.childNodes].forEach (node =>
+			{
+				if (node instanceof HTMLElement && node.slot == 'visible-activity') {
+					// do nothing.
+				} else {
+					node.remove ();
+				}
+			}
+		);
+	}
+	
 	addMenuGroup (aGroupName)
 	{
 		const shadow = shadowObjects.get (this);
