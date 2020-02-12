@@ -47,7 +47,7 @@ export const menhera = Object.freeze ({
 	get searchParams ()
 	{
 		return new URLSearchParams (this.search);
-	}
+	},
 	
 	/**
 		Broadcasts a navigation event.
@@ -94,6 +94,9 @@ export const menhera = Object.freeze ({
 		history.replaceState (target, '', target.href);
 	},
 	
-	menheraBody: document.body.append (new MenheraWindowElement)
+	/**
+		The <menhera-body> element.
+	*/
+	menheraBody: document.body.append (new MenheraWindowElement),
 });
 
