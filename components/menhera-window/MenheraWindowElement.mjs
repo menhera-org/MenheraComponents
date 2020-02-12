@@ -357,6 +357,19 @@ export class MenheraWindowElement extends HTMLElement
 		shadow.drawerSubheading.textContent = aSiteSlogan;
 		return true;
 	}
+	
+	get title ()
+	{
+		const shadow = shadowObjects.get (this);
+		return shadow.menuHeading.textContent;
+	}
+	
+	set title (aTitle)
+	{
+		const shadow = shadowObjects.get (this);
+		shadow.menuHeading.textContent = aTitle;
+		return true;
+	}
 }
 
 customElements.define ('menhera-window', MenheraWindowElement);

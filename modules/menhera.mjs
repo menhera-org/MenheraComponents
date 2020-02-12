@@ -22,6 +22,9 @@
 import {MenheraWindowElement} from '/_menhera/components/menhera-window/MenheraWindowElement.mjs';
 import {NavigationTarget} from '/_menhera/modules/NavigationTarget.mjs';
 
+const CACHE_NAME = 'menhera-assets-v1';
+
+
 export const menhera = Object.freeze ({
 	get path ()
 	{
@@ -98,5 +101,17 @@ export const menhera = Object.freeze ({
 		The <menhera-window> element.
 	*/
 	menheraWindow: document.body.appendChild (new MenheraWindowElement),
+	
+	/**
+		Add assets to the cache.
+	*/
+	async addToCache (... aAssets)
+	{
+		if ('object' !== typeof caches) {
+			return false;
+		}
+		const cache = await caches.open (CACHE_NAME);
+		await Promise.all (aAssets.map (path => cache.add (path)));
+	},
 });
 

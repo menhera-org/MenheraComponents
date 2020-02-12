@@ -29,6 +29,8 @@ import {menhera} from '/_menhera/modules/menhera.mjs';
 
 export {NavigationTarget, menhera};
 
+export const SERVICE_WORKER_PATH = '/_menhera_sw.js';
+
 
 window.addEventListener ('popstate'
 	, ev => void (
@@ -55,5 +57,33 @@ window.addEventListener ('DOMContentLoaded'
 		}))
 	}
 );
+
+(async () => {
+	if (!('serviceWorker' in navigator)) {
+		console.log ('Service workers are not supported.');
+		return false;
+	}
+	
+	if ('https:' !== location.protocol) {
+		console.warn ('Non-supported protocol for ServiceWorker.');
+		return;
+	}
+	
+	let registration = await navigator.serviceWorker.getRegistration ('/');
+	console.log ('registration:', registration);
+	
+	if (registration) {
+		return;
+	}
+	
+	try {
+		console.log ('trying to register');
+		registration = await navigator.serviceWorker
+		.register (SERVICE_WORKER_PATH, {scope: '/'});
+		console.log ('register returned');
+	} catch (error) {
+		console.log ('Service worker registration failed:', error);
+	}
+}) ();
 
 
