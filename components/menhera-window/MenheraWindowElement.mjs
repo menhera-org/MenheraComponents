@@ -20,6 +20,7 @@
 
 import {ShadowObjects} from '/_menhera/modules/ShadowObjects.mjs';
 import {appendNewElement} from '/_menhera/modules/DOMUtils.mjs';
+import {MenheraAnchorElement} from '/_menhera/components/menhera-anchor/MenheraAnchorElement.mjs';
 
 const shadowObjects = new ShadowObjects;
 
