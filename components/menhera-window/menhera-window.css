@@ -141,11 +141,11 @@
 
 #drawer-heading {
 	margin: 0;
-	padding-inline-start: calc(2 * var(--menhera-drawer-inline-padding));
+	padding-inline-start: var(--menhera-drawer-inline-padding);
 	padding-inline-end: var(--menhera-drawer-inline-padding);
-	padding-block-start: var(--menhera-drawer-block-padding);
+	padding-block-start: calc(2 * var(--menhera-drawer-block-padding));
 	padding-block-end: var(--menhera-drawer-block-padding);
-	text-align: center;
+	text-align: start;
 }
 
 #drawer-subheading {
