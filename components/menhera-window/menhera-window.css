@@ -57,17 +57,25 @@
 
 #drawer {
 	display: block;
+	/*
 	grid-column-start: drawer-start;
 	grid-column-end: drawer-end;
 	grid-row-start: main-start;
 	grid-row-end: main-end;
+	*/
 	background-color: var(--menhera-theme-drawer-background-color);
 	color: var(--menhera-theme-drawer-text-color);
-	overflow: hidden;
+	overflow: auto;
+	overflow-inline: hidden;
 	--menhera-drawer-inline-padding: 1rem;
 	--menhera-drawer-block-padding: .5rem;
 	border-inline-end: solid .125rem var(--menhera-theme-drawer-border-color);
 	box-sizing: border-box;
+	position: fixed;
+	inset-block: 0;
+	inset-inline: 0;
+	block-size: 100%;
+	inline-size: var(--menhera-window-drawer-size);
 }
 
 #menubar {
@@ -83,6 +91,9 @@
 	align-items: center;
 	border-block-end: solid .125rem var(--menhera-theme-menubar-border-color);
 	box-sizing: border-box;
+	position: -webkit-sticky;
+	position: sticky;
+	inset-block-start: 0;
 }
 
 #frame {
