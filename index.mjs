@@ -24,7 +24,8 @@ export {MenheraAnchorElement} from '/_menhera/components/menhera-anchor/MenheraA
 
 export {MenheraMarkdownElement} from '/_menhera/components/menhera-markdown/MenheraMarkdownElement.mjs';
 
-export {NavigationTarget} from '/_menhera/modules/NavigationTarget.mjs';
+import {NavigationTarget} from '/_menhera/modules/NavigationTarget.mjs';
+export {NavigationTarget};
 
 export {menhera} from '/_menhera/modules/menhera.mjs';
 
