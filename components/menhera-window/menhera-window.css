@@ -60,6 +60,8 @@
 	background-color: var(--menhera-theme-drawer-background-color);
 	color: var(--menhera-theme-drawer-text-color);
 	overflow: hidden;
+	--menhera-drawer-inline-padding: calc(2em);
+	--menhera-drawer-block-padding: calc(1em);
 }
 
 #menubar {
@@ -135,5 +137,22 @@
 	background-size: 50%;
 	background-position: center center;
 	background-repeat: no-repeat;
+}
+
+#drawer-heading {
+	margin: 0;
+	padding-inline-start: var(--menhera-drawer-inline-padding);
+	padding-inline-end: var(--menhera-drawer-inline-padding);
+	padding-block-start: var(--menhera-drawer-block-padding);
+	padding-block-end: var(--menhera-drawer-block-padding);
+	text-align: center;
+}
+
+#drawer-subheading {
+	margin: 0;
+	padding-inline-start: var(--menhera-drawer-inline-padding);
+	padding-inline-end: var(--menhera-drawer-inline-padding);
+	padding-block-start: var(--menhera-drawer-block-padding);
+	padding-block-end: var(--menhera-drawer-block-padding);
 }
 
