@@ -63,6 +63,7 @@
 	--menhera-drawer-inline-padding: 1rem;
 	--menhera-drawer-block-padding: .5rem;
 	border-inline-end: solid .125rem var(--menhera-theme-drawer-border-color);
+	box-sizing: border-box;
 }
 
 #menubar {
@@ -77,6 +78,7 @@
 	grid-template-columns: 4rem 1fr 4rem;
 	align-items: center;
 	border-block-end: solid .125rem var(--menhera-theme-menubar-border-color);
+	box-sizing: border-box;
 }
 
 #frame {
