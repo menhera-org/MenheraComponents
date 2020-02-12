@@ -1,0 +1,139 @@
+/* -*- tab-width: 4; indent-tabs-mode: t -*- */
+/**
+	MenheraComponents
+
+	Copyright (C) 2020  Menhera.org
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Affero General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Affero General Public License for more details.
+
+	You should have received a copy of the GNU Affero General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+:host {
+	--menhera-window-drawer-size: 20rem;
+	--menhera-window-menubar-size: minmax(4rem, max-content);
+}
+
+:host(.drawer-toggled) {
+	--menhera-window-drawer-size: 0;
+}
+
+@media print {
+	:host {
+		--menhera-window-drawer-size: 0 !important;
+		--menhera-window-menubar-size: 0 !important;
+	}
+}
+
+@media (max-width: 40em) {
+	:host {
+		--menhera-window-drawer-size: 0;
+		grid-template-columns: [drawer-start] 0 [content-start] var(--menhera-window-drawer-size) [drawer-end] 1fr [content-end] !important;
+	}
+	
+	:host(.drawer-toggled) {
+		--menhera-window-drawer-size: calc(100% - 4rem);
+	}
+}
+
+:host {
+	display: grid;
+	grid-template-columns: [drawer-start] var(--menhera-window-drawer-size) [drawer-end] 0 [content-start] 1fr [content-end];
+	grid-template-rows: [main-start] var(--menhera-window-menubar-size) [content-start] 1fr [main-end];
+}
+
+#drawer {
+	display: block;
+	grid-column-start: drawer-start;
+	grid-column-end: drawer-end;
+	grid-row-start: main-start;
+	grid-row-end: main-end;
+	background-color: var(--menhera-theme-drawer-background-color);
+	color: var(--menhera-theme-drawer-text-color);
+	overflow: hidden;
+}
+
+#menubar {
+	grid-column-start: drawer-end;
+	grid-column-end: content-end;
+	grid-row-start: main-start;
+	grid-row-end: content-start;
+	background-color: var(--menhera-theme-menubar-background-color);
+	color: var(--menhera-theme-menubar-text-color);
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 4rem 1fr 4rem;
+	align-items: center;
+}
+
+#frame {
+	grid-column-start: content-start;
+	grid-column-end: content-end;
+	grid-row-start: content-start;
+	grid-row-end: main-end;
+	background-color: var(--menhera-theme-frame-background-color);
+	color: var(--menhera-theme-frame-text-color);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+#frame-splash {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+#loading-logo {
+	max-inline-size: 50%;
+}
+
+#toggle-drawer {
+	display: block;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+	font-size: 0;
+	box-sizing: border-box;
+	block-size: 100%;
+	background-color: rgba(255,255,255,0.25);
+	border: none;
+	background-image: url(resources/menu.svg);
+	background-size: 50%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#menu-heading {
+	margin: 0;
+	padding-inline-start: 1rem;
+	padding-inline-end: 1rem;
+	padding-block-start: 1rem;
+	padding-block-end: 1rem;
+	font-weight: 300;
+	font-size: 125%;
+	text-align: center;
+}
+
+#menu-account {
+	color: inherit;
+	font-size: 0;
+	display: block;
+	block-size: 100%;
+	background-image: url(resources/user.svg);
+	background-size: 50%;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+

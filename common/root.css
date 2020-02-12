@@ -1,0 +1,108 @@
+/* -*- tab-width: 4; indent-tabs-mode: t -*- */
+/**
+	MenheraComponents
+
+	Copyright (C) 2020  Menhera.org
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Affero General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Affero General Public License for more details.
+
+	You should have received a copy of the GNU Affero General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+:root {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	min-block-size: 100%;
+	font-family: var(--menhera-theme-font-family);
+	font-weight: var(--menhera-theme-default-font-weight);
+}
+
+body {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+menhera-frame > :not([hidden]) {
+	flex-grow: 1;
+}
+
+body.collapsed {
+	grid-template-columns: [main-start] 0 [content-start] 1fr [main-end];
+}
+
+body > menhera-frame {
+	grid-column-start: content-start;
+	grid-column-end: main-end;
+	grid-row-start: content-start;
+	grid-row-end: main-end;
+	transition: all .25s ease-out;
+}
+
+body > menhera-menubar {
+	grid-column-start: content-start;
+	grid-column-end: main-end;
+	grid-row-start: main-start;
+	grid-row-end: content-start;
+	transition: all .25s ease-out;
+	background-color: #b70070;
+	color: #fff;
+}
+
+body > menhera-drawer {
+	grid-column-start: main-start;
+	grid-column-end: content-start;
+	grid-row-start: main-start;
+	grid-row-end: main-end;
+	transition: all .25s ease-out;
+	background-color: #b52700;
+	color: #fff;
+}
+
+
+menhera-drawer > nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+menhera-drawer > nav > ul > li {
+	padding-block: .5em;
+	padding-inline: 1em;
+	background-color: rgba(0,0,0,.25);
+	border-block-start: solid .125rem #fff;
+	font-weight: bold;
+}
+
+menhera-drawer > nav > ul > li > ul {
+	margin-block-start: .5em;
+	margin-inline-start: -1em;
+	margin-block-end: -.5em;
+	box-sizing: border-box;
+	inline-size: calc(100% + 2em);
+	font-weight: 300;
+}
+
+menhera-drawer > nav > ul > li > ul > li > a {
+	display: block;
+	padding-block: 1em;
+	padding-inline: 1em;
+	background-color: rgba(255,255,255,.25);
+}
+
+menhera-drawer > nav > ul > li > ul > li > a:hover
+, menhera-drawer > nav > ul > li > ul > li > a:active {
+	background-color: rgba(255,255,255,.5);
+}
+

@@ -1,0 +1,61 @@
+/* -*- tab-width: 4; indent-tabs-mode: t -*- */
+/**
+	MenheraComponents
+
+	Copyright (C) 2020  Menhera.org
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Affero General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Affero General Public License for more details.
+
+	You should have received a copy of the GNU Affero General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+
+/* Default CSS theme variables. */
+:root, :host {
+	--menhera-theme-font-family: system-ui, sans-serif;
+	--menhera-theme-default-font-weight: 300;
+	--menhera-theme-bold-font-weight: 500;
+	--menhera-theme-frame-background-color: #fff;
+	--menhera-theme-frame-text-color: #666;
+	--menhera-theme-menubar-background-color: #d24800;
+	--menhera-theme-menubar-text-color: #fff;
+	--menhera-theme-drawer-background-color: #750055;
+	--menhera-theme-drawer-text-color: #fff;
+}
+
+body {
+	margin: 0;
+}
+
+button, input, select {
+	font: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+strong, h1, h2, h3, h4, h5, h6 {
+	font-weight: var(--menhera-theme-bold-font-weight);
+}
+
+
+/*
+	custom elements
+*/
+
+menhera-anchor {
+	display: inline;
+	cursor: pointer;
+}
+
