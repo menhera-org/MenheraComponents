@@ -32,6 +32,10 @@
 		--menhera-window-drawer-size: 0 !important;
 		--menhera-window-menubar-size: 0 !important;
 	}
+	
+	#drawer, #menubar {
+		display: none !important;
+	}
 }
 
 @media (max-width: 40em) {
