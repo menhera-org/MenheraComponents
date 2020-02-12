@@ -21,7 +21,6 @@
 import {ShadowObjects} from '/_menhera/modules/ShadowObjects.mjs';
 import {appendNewElement} from '/_menhera/modules/DOMUtils.mjs';
 import {NavigationTarget} from '/_menhera/modules/NavigationTarget.mjs';
-import {menhera} from '/_menhera/modules/menhera.mjs';
 
 const shadowObjects = new ShadowObjects;
 
@@ -63,8 +62,10 @@ export class MenheraAnchorElement extends HTMLElement
 			shadow.click ();
 		});
 		
-		shadow.click = () => menhera.triggerNavigation (
-			shadow.target, this.ownerDocument.defaultView);
+		import ('/_menhera/modules/menhera.mjs').then (({menhera}) => {
+			shadow.click = () => menhera.triggerNavigation (
+				shadow.target, this.ownerDocument.defaultView);
+		});
 	}
 	
 	/**
