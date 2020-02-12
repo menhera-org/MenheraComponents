@@ -95,8 +95,8 @@ export const menhera = Object.freeze ({
 	},
 	
 	/**
-		The <menhera-body> element.
+		The <menhera-window> element.
 	*/
-	menheraBody: document.body.appendChild (new MenheraWindowElement),
+	menheraWindow: document.body.appendChild (new MenheraWindowElement),
 });
 

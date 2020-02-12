@@ -25,9 +25,9 @@ export {MenheraAnchorElement} from '/_menhera/components/menhera-anchor/MenheraA
 export {MenheraMarkdownElement} from '/_menhera/components/menhera-markdown/MenheraMarkdownElement.mjs';
 
 import {NavigationTarget} from '/_menhera/modules/NavigationTarget.mjs';
-export {NavigationTarget};
+import {menhera} from '/_menhera/modules/menhera.mjs';
 
-export {menhera} from '/_menhera/modules/menhera.mjs';
+export {NavigationTarget, menhera};
 
 
 window.addEventListener ('popstate'
