@@ -21,16 +21,19 @@
 :host {
 	--menhera-window-drawer-size: 20rem;
 	--menhera-window-menubar-size: minmax(4rem, max-content);
+	--menhera-window-drawer-border: .125rem;
 }
 
 :host(.drawer-toggled) {
 	--menhera-window-drawer-size: 0;
+	--menhera-window-drawer-border: 0;
 }
 
 @media print {
 	:host {
 		--menhera-window-drawer-size: 0 !important;
 		--menhera-window-menubar-size: 0 !important;
+		--menhera-window-drawer-border: 0 !important;
 	}
 	
 	#drawer, #menubar {
@@ -42,10 +45,12 @@
 	:host {
 		--menhera-window-drawer-size: 0;
 		grid-template-columns: [drawer-start] 0 [content-start] var(--menhera-window-drawer-size) [drawer-end] 1fr [content-end] !important;
+		--menhera-window-drawer-border: 0;
 	}
 	
 	:host(.drawer-toggled) {
 		--menhera-window-drawer-size: calc(100% - 4rem);
+		--menhera-window-drawer-border: .125rem;
 	}
 }
 
@@ -69,7 +74,7 @@
 	overflow-inline: hidden;
 	--menhera-drawer-inline-padding: 1rem;
 	--menhera-drawer-block-padding: .5rem;
-	border-inline-end: solid .125rem var(--menhera-theme-drawer-border-color);
+	border-inline-end: solid var(--menhera-window-drawer-border) var(--menhera-theme-drawer-border-color);
 	box-sizing: border-box;
 	position: fixed;
 	inset-block: 0;
