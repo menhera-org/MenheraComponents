@@ -25,10 +25,13 @@ void menhera.addToCache (
 	'/index.html'
 );
 
-menhera.menheraWindow.addMenuGroup ('account');
-menhera.menheraWindow.setMenuGroupLabel ('account', 'Guest');
-menhera.menheraWindow.addMenuItem ('account', 'sign-in', 'Sign in', '/login');
+Promise.resolve ().then (() => {
+	menhera.menheraWindow.addMenuGroup ('account');
+	menhera.menheraWindow.setMenuGroupLabel ('account', 'Guest');
+	menhera.menheraWindow.addMenuItem ('account', 'sign-in', 'Sign in', '/login');
 
-menhera.menheraWindow.siteName = 'MenheraComponents';
-menhera.menheraWindow.siteSlogan = 'A Menhera.org project';
+	menhera.menheraWindow.siteName = 'MenheraComponents';
+	menhera.menheraWindow.siteSlogan = 'A Menhera.org project';
+});
+
 
