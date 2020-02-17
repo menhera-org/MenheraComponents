@@ -97,6 +97,7 @@ export const menhera = Object.freeze ({
 	
 	/**
 		Add assets to the cache.
+		This may reject if ServiceWorkers are not supported.
 	*/
 	async addToCache (... aAssets)
 	{
