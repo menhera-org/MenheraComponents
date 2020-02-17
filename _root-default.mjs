@@ -18,20 +18,20 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import {menhera} from '/_menhera/index.mjs';
+import {menhera, MenheraWindowElement} from '/_menhera/index.mjs';
 
 void menhera.addToCache (
 	'/_menhera/_root-default.mjs',
 	'/index.html'
 );
 
-Promise.resolve ().then (() => {
-	menhera.menheraWindow.addMenuGroup ('account');
-	menhera.menheraWindow.setMenuGroupLabel ('account', 'Guest');
-	menhera.menheraWindow.addMenuItem ('account', 'sign-in', 'Sign in', '/login');
+const menheraWindow = document.body.appendChild (new MenheraWindowElement);
 
-	menhera.menheraWindow.siteName = 'MenheraComponents';
-	menhera.menheraWindow.siteSlogan = 'A Menhera.org project';
-});
+menheraWindow.addMenuGroup ('account');
+menheraWindow.setMenuGroupLabel ('account', 'Guest');
+menheraWindow.addMenuItem ('account', 'sign-in', 'Sign in', '/login');
+
+menheraWindow.siteName = 'MenheraComponents';
+menheraWindow.siteSlogan = 'A Menhera.org project';
 
 
