@@ -22,6 +22,14 @@ import {ShadowObjects} from '/_menhera/modules/ShadowObjects.mjs';
 import {appendNewElement} from '/_menhera/modules/DOMUtils.mjs';
 import '/_menhera/dependencies/markdown-it_10.0.0.min.js';
 
+import {menhera} from '/_menhera/modules/menhera.mjs';
+
+void menhera.addToCache (
+	'/_menhera/components/menhera-markdown/menhera-markdown.css',
+	'/_menhera/components/menhera-markdown/MenheraMarkdownElement.mjs',
+	'/_menhera/dependencies/markdown-it_10.0.0.min.js'
+);
+
 const shadowObjects = new ShadowObjects;
 const md = markdownit ();
 

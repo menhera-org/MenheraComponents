@@ -32,6 +32,20 @@ export {NavigationTarget, menhera};
 export const SERVICE_WORKER_PATH = '/_menhera_sw.js';
 
 
+menhera.addToCache (
+	'/_menhera_sw.js',
+	'/_menhera/index.mjs',
+	'/_menhera/modules/DOMUtils.mjs',
+	'/_menhera/modules/menhera.mjs',
+	'/_menhera/modules/NavigationTarget.mjs',
+	'/_menhera/modules/ShadowObjects.mjs',
+	'/_menhera/common/common.css',
+	'/_menhera/common/root.css',
+	'/_menhera/common/menhera.org.svg',
+	'/_menhera/common/menhera.org.svg.png'
+);
+
+
 window.addEventListener ('popstate'
 	, ev => void (
 		(ev.state instanceof NavigationTarget)

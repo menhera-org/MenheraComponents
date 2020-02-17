@@ -20,6 +20,10 @@
 
 import {menhera} from '/_menhera/index.mjs';
 
+void menhera.addToCache (
+	'/_menhera/_root-default.mjs',
+	'/index.html'
+);
 
 menhera.menheraWindow.addMenuGroup ('account');
 menhera.menheraWindow.setMenuGroupLabel ('account', 'Guest');

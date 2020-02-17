@@ -22,7 +22,13 @@ import {ShadowObjects} from '/_menhera/modules/ShadowObjects.mjs';
 import {appendNewElement} from '/_menhera/modules/DOMUtils.mjs';
 import {NavigationTarget} from '/_menhera/modules/NavigationTarget.mjs';
 
+import {menhera} from '/_menhera/modules/menhera.mjs';
+
 const shadowObjects = new ShadowObjects;
+
+void menhera.addToCache (
+	'/_menhera/components/menhera-anchor/MenheraAnchorElement.mjs'
+);
 
 export class MenheraAnchorElement extends HTMLElement
 {

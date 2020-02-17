@@ -21,6 +21,14 @@
 import {ShadowObjects} from '/_menhera/modules/ShadowObjects.mjs';
 import {appendNewElement} from '/_menhera/modules/DOMUtils.mjs';
 import {MenheraAnchorElement} from '/_menhera/components/menhera-anchor/MenheraAnchorElement.mjs';
+import {menhera} from '/_menhera/modules/menhera.mjs';
+
+void menhera.addToCache (
+	'/_menhera/components/menhera-window/MenheraWindowElement.mjs',
+	'/_menhera/components/menhera-window/menhera-window.css',
+	'/_menhera/components/menhera-window/resources/menu.svg',
+	'/_menhera/components/menhera-window/resources/user.svg'
+);
 
 const shadowObjects = new ShadowObjects;
 

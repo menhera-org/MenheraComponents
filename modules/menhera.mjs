@@ -18,12 +18,12 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
-import {MenheraWindowElement} from '/_menhera/components/menhera-window/MenheraWindowElement.mjs';
 import {NavigationTarget} from '/_menhera/modules/NavigationTarget.mjs';
 
 const CACHE_NAME = 'menhera-assets-v1';
 
+
+let _menheraWindow;
 
 export const menhera = Object.freeze ({
 	get path ()
@@ -100,7 +100,10 @@ export const menhera = Object.freeze ({
 	/**
 		The <menhera-window> element.
 	*/
-	menheraWindow: document.body.appendChild (new MenheraWindowElement),
+	get menheraWindow ()
+	{
+		return _menheraWindow;
+	},
 	
 	/**
 		Add assets to the cache.
@@ -113,5 +116,10 @@ export const menhera = Object.freeze ({
 		const cache = await caches.open (CACHE_NAME);
 		await Promise.all (aAssets.map (path => cache.add (path)));
 	},
+});
+
+import ('/_menhera/components/menhera-window/MenheraWindowElement.mjs')
+.then (({MenheraWindowElement}) => {
+	_menheraWindow = document.body.appendChild (new MenheraWindowElement);
 });
 
