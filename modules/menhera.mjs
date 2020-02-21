@@ -61,8 +61,8 @@ export const menhera = Object.freeze ({
 		
 		const canceled = !top.dispatchEvent (new CustomEvent ('MenheraNavigate', {
 			detail: Object.freeze ({
-				aTarget,
-				view: window,
+				target: aTarget,
+				view: aView,
 			})
 		}));
 		
